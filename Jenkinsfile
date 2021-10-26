@@ -45,9 +45,8 @@ spec:
   }
 
   stages {
-      stage('Checkout source code') {
+      stage('Preamble') {
         steps {
-            git url: "${SOURCE_GIT_URL}", branch: "${SOURCE_GIT_BRANCH}"
             script{
                 def buildTimeStamp = sh(script: "date +'%Y-%m-%d-%H-%M-%S'", returnStdout: true).trim()
                 devTag = "dev-"+buildTimeStamp
